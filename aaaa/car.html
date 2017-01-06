@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		 	body{
+		 		margin: 0px;
+		 		padding: 0px;
+		 	}
+		 	/*太阳*/
+		 	#bigsun{
+		 		width: 100%;
+		 		height: 60px;
+		 		
+		 	}
+			#sun{
+				width: 60px;
+				height: 60px;
+				border: 1px solid coral;
+				border-radius: 50%;
+				background: orangered;
+				box-shadow: 0 0 50px 20px goldenrod;
+				position: absolute;	
+				top: 307px;
+				animation: sun1 20s linear infinite;	
+				}
+			/*月亮*/
+			#bigmoon{
+				width: 100%;
+				height: 60px;
+				
+			}	
+			#moon{
+				width: 80px;
+				height: 80px;
+				border: 1px solid white;
+				background: white;
+				box-shadow: 0 0 50px 20px ghostwhite;
+				border-radius: 50%;
+				position: absolute;
+				animation: moons 20s linear infinite;
+				top: 400px;
+				}	
+			/*小鸟*/	
+			#bride{
+				width: 100%;
+				height: 50px;
+				animation: brider 9s linear infinite;	
+			}	
+			#imgs img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 400px;
+			}
+			/*天空背景*/
+			#sky{
+				position: relative;
+				width: 102%;
+				height: 1000px;
+				background: rgb(200,228,238);	
+				overflow: hidden;
+				animation: skye 20s linear infinite;	
+			}
+			/*街道*/
+			#street{
+				background: #ccc url(res/1.png);
+				height: 100px;
+				width: 101%;
+				position: absolute;
+				bottom: 10px;
+				box-shadow: 0  1px 16px rgba(111, 35, 51, 0.4) inset;
+				z-index: 2;		
+			}
+			/*斑马线*/
+			#street-strip{
+				background:white;
+				width: 100px;
+				height: 10px;
+				border-radius: 2px;
+				position: absolute;
+				bottom: 58px;
+				box-shadow: 200px 0px 0px white, 400px 0px 0px white,600px 0px 0px white,800px 0px 0px white,					1000px 0px 0px white,1200px 0px 0px white,1400px 0px 0px white,1600px 0px 0px white,1800px 0px 0px white,2000px 0px 0px white;		
+				z-index: 3;
+				}
+				/*草坪*/
+				#grass{
+					width: 100%;
+					height: 20px;
+					background: #dbcac2;
+					position: absolute;
+					bottom: 0;
+					box-shadow: 0 -100px 0 0  #dbcac2;
+					z-index: 2;	
+				}
+				#grass:before{
+					content:"";
+					position: absolute;
+					width: 100%;
+					height: 10px;
+					background-color: #0aa;
+					top: -110px;		
+					background: -webkit-linear-gradient(right top, rgb(148,201,69) 25%,#0aa 25%);
+					background-size: 10px 10px ;
+					z-index: 2;	
+				}
+				/*山*/
+				#mountain{
+					width: 100%;
+					height: 300px;
+					position: absolute;
+					background: rgb(173,222,96);
+					z-index: 1;
+					top: 700px;
+					border:1px solid #adde60;
+					border-radius: 140% 138% 100% 10%;
+				}
+				#mountain:before,#mountain:after{
+					content: "";
+					position: absolute;
+					width:100%;
+					height: 250px;
+					background: #93cc3a;
+					border:1px solid #93cc3a;
+					border-radius: 50% 100% 100% 100%;
+					transform: rotate(10deg);
+					left: -500px;
+				}
+				#mountain:after{
+					background: rgb(148,201,67);
+					transform: rotate(-10deg);
+					left: auto;
+					right: -500px;
+					box-shadow: 0 0 20px #e4dbd2; 
+				}
+				#car{
+					width: 100%;
+					height: 100%;	
+					position: absolute;	
+					animation: run 7s linear infinite;
+				}
+				#car img{
+					width: 100px;
+					height: 100px;
+					position: absolute;
+    					top: -68px;
+				}
+				#img1,#img2{
+					position: absolute;
+					animation: lun 2s linear infinite;
+				}
+				#img0{
+					z-index: 1;
+				}
+				#img1{
+					    left: -35px;
+   						 top: -45px;
+				}
+				#img2{
+					left: 35px;
+				}
+				/*#carbody{
+					width: 150px;
+					height: 40px;
+					background: chocolate;
+					border: 6px solid  cyan;
+					border-radius: 0px 60px 0px 0px;
+					position: absolute;
+				    top: -45px;
+				}
+				#carwindow{
+					width: 30px;
+					height: 20px;
+					background: steelblue;
+					border:1px solid coral;
+					border-radius: 9px;
+					box-shadow: 40px 0 0 0 steelblue;
+					position: absolute;
+					top: 10px;
+					left: 5px;
+				}*/
+				/*#carwindowR{
+					width: 30px;
+					height: 20px;
+					background:violet ;
+					transform: skewX(45deg);
+					position: absolute;
+					top: 10px;
+					right: 20px;
+				}
+				#carwindowL{
+					width: 30px;
+					height: 20px;
+					background:cadetblue ;
+					position: absolute;
+					top: 10px;
+					right: 30px;
+				}
+				#carwheelL,#carwheelR{
+					width: 25px;
+					height: 25px;
+					border: 1px solid black;
+					background: -webkit-linear-gradient(45deg,yellow ,blue );
+					position: absolute;
+					top: 2px;
+					left: 115px;
+					border-radius: 50%;
+					box-shadow: 0 0 0 5px black;
+					animation: lun 2s linear infinite;
+				}
+				#carwheelR{
+					left: 20px;
+				}*/
+				/*月亮的动画效果*/
+				@-webkit-keyframes moons{
+					0%{
+						left: -100%;
+					}
+					100%{
+						left: 100%;
+					}
+				}
+				@-webkit-keyframes skye{
+					from{background:  rgb(200,228,238);}
+					to{background-color:midnightblue;}
+				}
+				@-webkit-keyframes sun1{
+					0%{
+						left: 0%;
+						top: 500px;
+					}
+					20%{
+						top: 300px;
+					}
+					80%{
+						top: 800px;
+					}
+					100%{
+						left: 200%;						
+					}
+				}
+				/*翅膀*/
+				@-webkit-keyframes lun{
+					0% {transform: rotateY(-90deg);}
+					20%{transform: rotateY(-60deg);}
+					40%{transform: rotateY(-30deg);}
+					60%{transform: rotateY(0deg);}
+					80%{transform: rotateY(30deg);}
+					90%{transform: rotateY(60deg);}
+					100%{transform: rotateY(90deg);}
+				}
+				/*小鸟*/
+				@-webkit-keyframes brider{
+					0%{
+						transform: translate(0,0);
+					}
+					10%{
+						transform: translate(10%,-100%);
+					}
+					20%{
+						transform: translate(20%,0%);
+					}
+					30%{
+						transform: translate(30%,100%);
+					}
+					40%{
+						transform: translate(40%,0%);
+					}
+					50%{
+						transform: translate(50%,-100%);
+					}
+					60%{
+						transform: translate(60%,0%);
+					}
+					70%{
+						transform: translate(70%,100%);
+					}
+					80%{
+						transform: translate(80%,0%);
+					}
+					90%{
+						transform: translate(90%,-100%);
+					}
+					100%{
+						transform: translate(100%,-100%);
+					}
+					
+				}
+				/*猪猪侠*/
+				@-webkit-keyframes run{
+					0%{
+						transform: translate(0,0);
+					}
+					20%{
+						transform: translate(20%,-50%);
+					}
+					40%{
+						transform: translate(40%,-100%);
+					}
+					60%{
+						transform: translate(60%,-50%);
+					}
+					80%{
+						transform: translate(80%,0);
+					}
+					100%{
+						transform: translate(100%,100%);
+					}
+				}
+				/*山上的树*/
+				#tree1,#tree2,#tree3,#dog,#hua{
+					font-size:150px;
+					width: 50px;
+					position: absolute;	
+					top: 500px;
+					left: 120px;		
+				}
+				#tree2{
+					top: 600px;
+					left: 500px;
+				}
+				#tree3{
+					top: 600px;
+					left: 1200px;	
+				}
+				#dog{
+					font-size: 60px;
+					left: 250px;
+					top: 610px;
+				}
+				#hua{
+					font-size: 120px;
+					left: 1448px;
+					top: 569px;					
+				}
+		</style>
+	</head>
+	<body>
+		<div id="sky">
+			<div id="tree1">🌲</div>
+			<div id="tree2">🌲</div>
+			<div id="tree3">🌲</div>
+			<div id="hua">🐅</div>
+			<div id="dog">🐩</div>
+			<div id="bigsun">
+				<div id="sun"></div>
+			</div>		
+			<div id="bigmoon">
+				<div id="moon"></div>
+			</div>
+			<div id="bride">
+				<div id="imgs">
+					<img src="res/3.png">
+				</div>
+			</div>
+			<div id="grass"></div>
+			<div id="street">
+				<div id="car">
+					<!--<div id="carbody">
+						<div id="carwindow"></div>
+						<div id="carwindowR"></div>
+						<div id="carwindowL"></div>
+					</div>
+					<div id="carwheel">
+						<div id="carwheelL"></div>
+						<div id="carwheelR"></div>
+					</div>-->
+					<img src="res/5.png" id="img0">
+					<img src="res/6.png"/ id="img1">
+					<img src="res/7.png"/ id="img2">
+				</div>
+			</div>
+			<div id="street-strip"></div>
+			<div id="mountain"></div>
+		</div>
+	</body>
+		<script type="text/javascript">
+			
+		</script>
+</html>
